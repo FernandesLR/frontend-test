@@ -6,7 +6,7 @@ import Header from '../../components/header';
 import heart from '../../assets/icones/heart/Path.svg';
 import { getCharacters } from '../../services/api'; // Importe a função corretamente
 import Card from '../../components/card.jsx'
-
+import './home.css'
 
 function Home() {
     const [qtdHerois, setQtdHerois] = useState(0); // Estado para controlar a quantidade de heróis
@@ -46,14 +46,17 @@ function Home() {
                 </div>
 
                 <div className="hero-list">
-                    {listaHerois.map(hero => (
-                        <Card 
-                            key={hero.id} 
-                            id={hero.id} 
-                            name={hero.name} 
-                            thumbnail={hero.thumbnail} 
-                        />
-                    ))}
+                    <div className="wrap">
+                        {listaHerois.map(hero => (
+                            <Card 
+                                key={hero.id} 
+                                id={hero.id} 
+                                name={hero.name} 
+                                thumbnail={hero.thumbnail} 
+                            />
+                        ))}
+
+                    </div>
                 </div>
 
             </section>
