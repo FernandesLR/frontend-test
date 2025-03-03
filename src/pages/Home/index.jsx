@@ -14,6 +14,7 @@ function Home() {
     const [favoritos, setFavoritos] = useState([]);
     const [somenteFavoritos, setSomenteFavoritos] = useState(false);
     const [mostrarSort, setMostrarSort] = useState(false);
+    const [searchTerm, setSearchTerm] = useState('');
 
     useEffect(() => {
         const fetchCharacters = async () => {
@@ -24,23 +25,34 @@ function Home() {
         fetchCharacters();
     }, []);
 
+    // Aplica a busca, o filtro de favoritos e a ordenação
     const heroisFiltrados = filtrarFavoritos(listaHerois, favoritos, somenteFavoritos);
     const heroisOrdenados = ordenarPorCaractere(heroisFiltrados, mostrarSort ? 'asc' : 'desc');
+    const heroisPesquisados = heroisOrdenados.filter(hero =>
+        hero.name.toLowerCase().includes(searchTerm.toLowerCase()) // Filtro da busca
+    );
 
     return (
         <main>
-            <Header />
+            <Header setSearchTerm={setSearchTerm} /> {/* Passa a função de busca para o Header */}
             <section>
                 <div className='F-sectionHeader'>
                     <p>Encontrados {qtdHerois} heróis</p>
                     <div className="F-section-headerFilters">
                         <img src={SuperHeroIcon} alt="Ícone de super herói" />
-                        <p>ordenar por nome - A/Z</p>
-                        <button className='F-section-headerFilters-toggle' onClick={() => toggleOrdenar(mostrarSort, setMostrarSort)}>
+                        <p>Ordenar por nome - A/Z</p>
+                        <button 
+                            className='F-section-headerFilters-toggle' 
+                            onClick={() => toggleOrdenar(mostrarSort, setMostrarSort)}
+                        >
                             <img src={toggle} alt="Botão de ordenar por caractere" />
                         </button>
 
-                        <button className='F-section-headerFilters-toggle' id='showFavorites' onClick={() => toggleFavoritos(somenteFavoritos, setSomenteFavoritos)}>
+                        <button 
+                            className='F-section-headerFilters-toggle' 
+                            id='showFavorites' 
+                            onClick={() => toggleFavoritos(somenteFavoritos, setSomenteFavoritos)}
+                        >
                             <img src={heart} alt="Ícone de coração" />
                             <p>{somenteFavoritos ? 'Mostrar todos' : 'Somente favoritos'}</p>
                         </button>
@@ -49,7 +61,7 @@ function Home() {
 
                 <div className="hero-list">
                     <div className="wrap">
-                        {heroisOrdenados.map(hero => (
+                        {heroisPesquisados.map(hero => (
                             <Card
                                 key={hero.id}
                                 id={hero.id}
