@@ -32,7 +32,9 @@
     box-sizing: border-box;
     padding: 30px 5px;
     transition: transform 0.4s, box-shadow 0.4s;
-    pointer-events: auto; 
+    pointer-events: auto;
+    text-decoration: none;
+    color: black;
 }
 
 .card img {
