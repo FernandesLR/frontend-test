@@ -1,6 +1,6 @@
 import { useState, useCallback } from 'react';
 import logo from '../assets/logo/Group.png';
-import searchIcon from '../assets/busca/Lupa/shape.png';
+import searchIcon from '../assets/busca/Lupa/Shape.png';
 import { Link } from 'react-router-dom';
 
 function Header({ mostrarDescricao = true, className, setSearchTerm }) {
