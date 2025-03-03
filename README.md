@@ -1,10 +1,10 @@
-#Frontend Challenge
+# Frontend Challenge
 
-Objetivo
+# Objetivo
 
 Desenvolver uma aplicação para listagem e detalhamento de personagens de quadrinhos, utilizando a API da Marvel.
 
-Requisitos
+# Requisitos
 
 SPA (Single Page Application) – Preferência por React;
 
@@ -56,7 +56,7 @@ Instruções para Avaliação Técnica
 
 Todos os desenvolvedores podem participar da avaliação técnica, então é essencial que os avaliadores saibam como instalar e executar o código.
 
-Instalação e Execução
+# Instalação e Execução
 
 Clone o repositório:
 
