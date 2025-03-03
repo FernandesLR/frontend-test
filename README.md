@@ -1,12 +1,75 @@
-# React + Vite
+#Frontend Challenge
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Objetivo
 
-Currently, two official plugins are available:
+Desenvolver uma aplicação para listagem e detalhamento de personagens de quadrinhos, utilizando a API da Marvel.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Requisitos
 
-## Expanding the ESLint configuration
+SPA (Single Page Application) – Preferência por React;
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Não utilizar bibliotecas de UI como Bootstrap, Semantic UI, Ant Design;
+
+Seguir o layout da pasta .assets, respeitando as páginas e componentes;
+
+Código disponível em repositório Git com commits organizados;
+
+Aplicação acessível via URL pública.
+
+Funcionalidades
+
+Página de Listagem de Personagens (Home)
+
+Exibe os 20 primeiros resultados da API;
+
+Ordenação por nome do personagem;
+
+Filtro por nome;
+
+Exibição apenas dos personagens favoritos;
+
+Possibilidade de favoritar/desfavoritar até 5 personagens.
+
+Página de Detalhe do Personagem
+
+Exibe dados do personagem;
+
+Mostra os últimos 10 quadrinhos lançados;
+
+Permite favoritar/desfavoritar dentro do limite de 5.
+
+Bônus (Opcional)
+
+Paginação na listagem;
+
+Persistência de favoritos após reload;
+
+Layout responsivo;
+
+Uso de ES6+;
+
+Ferramentas para qualidade do código;
+
+CI/CD.
+
+Instruções para Avaliação Técnica
+
+Todos os desenvolvedores podem participar da avaliação técnica, então é essencial que os avaliadores saibam como instalar e executar o código.
+
+Instalação e Execução
+
+Clone o repositório:
+
+git clone https://github.com/FernandesLR/frontend-test.git
+
+Acesse a pasta do projeto
+
+Instale as dependências:
+
+npm install
+
+Execute a aplicação:
+
+npm run dev
+
+Acesse http://localhost no navegador.
