@@ -7,7 +7,7 @@ import heart from '../../assets/icones/heart/Path.svg';
 import { getCharacters } from '../../services/api';
 import Card from '../../components/card.jsx';
 import { toggleFavoritos, toggleOrdenar, ordenarPorCaractere, filtrarFavoritos } from '../../utils/filtros';
-import { usePaginaAnterior, useProximaPagina } from '../../utils/pagination';
+import { usePaginaAnterior, useProximaPagina } from '../../utils/paginacao.js';
 
 const LIMIT = 20; // Número de heróis por página
 const TOTAL_HEROIS = 1000; // Total de heróis na API (fixo na documentação da Marvel)
