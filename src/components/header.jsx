@@ -1,6 +1,7 @@
 import { useState, useCallback } from 'react';
 import logo from '../assets/logo/Group.png';
 import searchIcon from '../assets/busca/Lupa/shape.png';
+import { Link } from 'react-router-dom';
 
 function Header({ mostrarDescricao = true, className, setSearchTerm }) {
   const [searchValue, setSearchValue] = useState('');
@@ -14,13 +15,17 @@ function Header({ mostrarDescricao = true, className, setSearchTerm }) {
 
   return (
     <header className={className}>
-      <img src={logo} alt="Marvel logo" className="logo" />
-      <h1>EXPLORE O UNIVERSO</h1>
+      <Link to={'/'}>
+        <img src={logo} alt="Marvel logo" className="logo" />
+      </Link>
       {mostrarDescricao && (
-        <p>
-          Mergulhe no domínio deslumbrante de todos os personagens clássicos que você ama - 
-          e aqueles que você descobrirá em breve!
-        </p>
+        <div style={{ textAlign: 'center' }}>
+          <h1>EXPLORE O UNIVERSO</h1>
+          <p>
+            Mergulhe no domínio deslumbrante de todos os personagens clássicos que você ama - 
+            e aqueles que você descobrirá em breve!
+          </p>
+        </div>
       )}
       <div className="search">
         <img src={searchIcon} alt="Ícone de busca" />
