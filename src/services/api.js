@@ -33,19 +33,25 @@ export const getCharacters = async (limit = 20, offset = 0) => {
 
 export const getCharacter = async (id) => {
     try {
-        const { ts, hash } = gerarHash()
-        const response = await fetch(`${API_URL}/${id}?ts=${ts}&apikey=${API_PUBLIC_KEY}&hash=${hash}`)
+        const { ts, hash } = gerarHash();
+        const response = await fetch(`${API_URL}/${id}?ts=${ts}&apikey=${API_PUBLIC_KEY}&hash=${hash}`);
         
         if (!response.ok) {
-            throw new Error("Erro ao buscar dados da API")
+            throw new Error("Erro ao buscar dados do personagem");
         }
 
         const data = await response.json();
-        return data.data.results[0]; // Retorna apenas o primeiro resultado
+        const character = data.data.results[0]
+
+        // Buscar os últimos 10 quadrinhos do personagem
+        const comicsResponse = await fetch(`${API_URL}/${id}/comics?ts=${ts}&apikey=${API_PUBLIC_KEY}&hash=${hash}&orderBy=-onsaleDate&limit=10`)
+        const comicsData = await comicsResponse.json()
+
+        return { character, comics: comicsData.data.results }
     } catch (error) {
-        console.error('Erro ao buscar personagem da API:', error.message || error);
+        console.error('Erro ao buscar personagem:', error)
         return null
     }
-}
+};
 
 export default { getCharacters, gerarHash };
