@@ -1,8 +1,160 @@
-*{
+* {
     padding: 0;
     margin: 0;
 }
 
-.headerr{
+.heroPage {
+    height: 100%;
+    width: 100vw;
+    background-color: rgba(255, 214, 214, 0.24);
+}
+
+.heroPage-header {
     display: flex;
+    flex-direction: row;
+    padding: 2% 8%;
+    gap: 100px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.heroPage-header div {
+    background-color: white;
+    height: 20px;
+}
+
+.heroPage-header .logo {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.heroPage-header .logo:hover {
+    transform: scale(1.01);
+    transition: transform 0.9s ease, box-shadow 0.9s ease;
+    box-shadow: 0px 20px 20px rgba(255, 156, 156, 0.363);
+}
+
+.heroPage-Fsection {
+    display: flex;
+    flex-direction: row;
+    padding: 2% 15%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.textWrapper h1 {
+    font-size: 3rem;
+    margin-bottom: 12%;
+}
+
+.heroPage-Fsection-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+    font-weight: bold;
+    margin-top: 25%;
+}
+
+.heroPage-Fsection-info > * {
+    width: calc(50% - 10px);
+}
+
+.icons-wraper {
+    display: flex;
+    justify-content: space-between;
+    width: 67%;
+    flex-wrap: wrap;
+}
+
+.icons-wraper div {
+    display: flex;
+}
+
+.comics-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.comic-card {
+    width: 150px;
+    text-align: center;
+    font-weight: bolder;
+}
+
+.comic-card img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.heroPage-Ssection {
+    padding: 2% 15%;
+    justify-content: space-between;
+    padding-bottom: 20%;
+}
+
+footer {
+    background-color: red;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding-top: 10%;
+}
+
+@media (max-width: 768px) {
+    .heroPage-header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .heroPage-Fsection {
+        flex-direction: column;
+        padding: 2% 5%;
+    }
+
+    .textWrapper h1 {
+        font-size: 2.5rem;
+        margin-bottom: 10%;
+    }
+
+    .heroPage-Fsection-info {
+        display: flex; /* Garante que os itens fiquem em linha */
+        flex-wrap: wrap; /* Permite quebra de linha se necessário */
+        gap: 20px; /* Espaçamento entre os itens */
+        width: 100%; /* Ocupa toda a largura */
+    }
+
+    .heroPage-Fsection-info > * {
+        width: calc(50% - 10px); /* Cada item ocupará metade da largura, ajustado para o gap */
+    }
+
+    .icons-wraper {
+        width: 100%;
+        justify-content: space-evenly;
+    }
+
+    .comic-card {
+        width: 100%;
+    }
+
+    .heroImage {
+        max-width: 100%;
+        height: auto;
+        margin-top: 20%;
+    }
+}
+
+@media (max-width: 480px) {
+    .textWrapper h1 {
+        font-size: 2rem;
+    }
+
+    footer {
+        padding-top: 5%;
+    }
+
+    .comic-card {
+        width: 100%; /* Faz os cards ocuparem 100% da largura */
+    }
 }
